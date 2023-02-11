@@ -18,5 +18,24 @@ var mainModule = (function (ui, data) {
         ui.setLocalStorageShowId(event);
     }
 
-    const 
+    const searchHandler = event => {
+        const searchValue = ui.collectInputData();
+        if (event.key == 'Enter') {
+            if (searchValue === '') {
+                return;
+            }
+            data.fetchSearchedShows(searchValue, ui.displayShows, ui.displayError);
+            return ui.displaySearchedList([]);
+        }
+        if (searchValue === '') {
+            return ui.displaySearchedList([]);
+        }
+        data.fetchSearchedShows(searchValue, ui.displaySearchedList, ui.displayError);
+    }
+
+    const initHomepage = () => {
+        setEventListener();
+        ui.formPreventDefault();
+        data.fetchShows(ui.displayShows, ui.displayError);
+    }
 })
