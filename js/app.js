@@ -38,4 +38,15 @@ var mainModule = (function (ui, data) {
         ui.formPreventDefault();
         data.fetchShows(ui.displayShows, ui.displayError);
     }
-})
+
+    const initShowInfoPage = () => {
+        ui.formPreventDefault();
+        setEventListener();
+        data.fetchShowInfo(ui.displayShowInfo, ui.displayError);
+    }
+
+    return {
+        initHomepage,
+        initShowInfoPage
+    }
+})(uModule, dataModule);
