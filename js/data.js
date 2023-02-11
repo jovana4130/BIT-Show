@@ -1,9 +1,11 @@
+'use strict';
+
 var dataModule = (function() {
     class Show {
-        constructor(id, title, cover) {
+        constructor(id, title, poster) {
             this.id = id;
             this.title = title;
-            this.cover = cover;
+            this.poster = poster;
             this.season = [];
             this.cast = [];
             this.summary;
@@ -70,5 +72,4 @@ var dataModule = (function() {
             failCb(err);
         });
     }
-    
-})
+};

@@ -1,3 +1,5 @@
+'use strict';
+
 var mainModule = (function (ui, data) {
 
     const setEventListener = () => {
