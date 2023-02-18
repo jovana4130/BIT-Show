@@ -14,14 +14,17 @@
 
     const onSearchDropdownClick = (e) => {
         if (event.target.getAttribute('class') !== 'search-item') {
-            ui.clearDropdown();
+            //ui.clearDropdown();
             return;
         }
         ui.clearDropdown();
+        const id = event.target.getAttribute('id');
+        
+        data.getSingleTvShow(id).then((show) => {
+            ui.renderSingleTvShowPage(show)
+        });
         console.log(event.target.getAttribute('id'));
     };
-
-
 
 
 
@@ -31,6 +34,6 @@
 
 
     searchInput.addEventListener('keyup', onSearch);
-    searchInput.addEventListener('click', onSearchDropdownClick);
+    searchDropdownEl.addEventListener('click', onSearchDropdownClick);
     //searchInput.addEventListener('blur', ui.clearDropdown);
 })(dataModule, uiModule);
