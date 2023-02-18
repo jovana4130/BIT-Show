@@ -31,20 +31,22 @@ const dataModule = (function() {
     };
 
     const getSingleTvShow = (id) => {
-        return fetch(`http://api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]cast`)
+        return fetch(`https://api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast`)
         .then(function (res) {
             return res.json();
         })
         .then(function (rawTvShows) {
+            console.log(rawTvShows);
+            console.log('cao');
             const seasons = rawTvShows._embedded.seasons.map((s) => new Season(s.startDate, s.endDate));
-            const cast = rawTvShows.embeded.cast.map((a) => a.person.name);
-            return new TvShow(rawTvShows.name, rawTvShow.id, rawTvShow.image.original, cast, seasons, rawTvShow.summary);
+            const cast = rawTvShows._embedded.cast.map((a) => a.person.name);
+            return new TvShow(rawTvShows.name, rawTvShows.id, rawTvShows.image.original, cast, seasons, rawTvShows.summary);
             //console.log(rawTvShows);
         });
     };
 
     const searchShow = (term) => {
-        return fetch(`http://api.tvmaze.com/search/shows?q=${term}`)
+        return fetch(`https://api.tvmaze.com/search/shows?q=${term}`)
         .then(function (res) {
             return res.json();
         })

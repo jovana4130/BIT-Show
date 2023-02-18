@@ -21,10 +21,10 @@
         }
         ui.clearDropdown();
         const id = event.target.getAttribute('id');
-        data.getSingleTvShow(id).then((show) => {
+            data.getSingleTvShow(id).then((show) => {
             ui.renderSingleTvShowPage(show);
         });
-        //console.log(e.target.getAttribute('id'));
+        //console.log(event.target.getAttribute('id'));
     };
 
     const onSingleTvShowClick = (e) => {
