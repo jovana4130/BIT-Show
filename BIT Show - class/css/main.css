@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 24px;
-    align-self: stretch;
+    /*align-self: stretch;*/
 }
 
 #main-content {
@@ -29,6 +29,25 @@
     flex-direction: column;
     align-items: center;
     width: 900px;
+}
+
+.show-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    /*align-items: center;*/
+    width: 900px;
+    padding-top: 24px;
+}
+
+.show-item {
+    width: 290px;
+}
+
+.show-item img{
+    width: 100%;
+    object-fit: cover;
 }
 
 #footer {
