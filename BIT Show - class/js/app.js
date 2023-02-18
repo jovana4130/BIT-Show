@@ -27,11 +27,16 @@
         //console.log(event.target.getAttribute('id'));
     };
 
+    const onClickHomeButtonHandler = () => {
     data.getShows().then((shows) => {
         ui.renderHomePage(shows);
-    });
+        });
+    };
+
+    onClickHomeButtonHandler();
 
     searchInput.addEventListener('keyup', onSearch);
     searchDropdownEl.addEventListener('click', onSearchDropdownClick);
+    homeButtonEl.addEventListener('click', onClickHomeButtonHandler);
     //searchInput.addEventListener('blur', ui.clearDropdown);
 })(dataModule, uiModule);
