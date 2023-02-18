@@ -21,6 +21,29 @@
     /*align-self: stretch;*/
 }
 
+#search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#search-wrapper input {
+    position: relative;
+    width: 100%;
+}
+
+.search-item {
+    padding: 4px 0;
+}
+
+#search-dropdown {
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px -4px 40px rgb(255, 255, 255, 0.06), 0px 4px 24px rgb(16, 37, 62, 0.04), 0px 24px 48px rgb(75,  82,  93, 0.02);
+    width: 100px;
+    padding: 4px;
+}
+
 #main-content {
     height: calc(100vh - 140px);
     overflow: auto;
