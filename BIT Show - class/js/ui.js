@@ -2,14 +2,49 @@ const uiModule = (function () {
     const mainContentWrapperEl = document.querySelector('#main-content');
     const searchDropdownEl = document.querySelector('#search-dropdown');
     
-    const renderPage = (htmlString) => {
-        let html = `
+    const renderSingleTvShowPage = (show) => {
+    
+        show.cast.forEach(string => {
+            castListHtml += `
+            <div class='csst-item'>${string}</div>
+            `;
+        });
+
+        let castListHtml = '';
+        show.cast.forEach(string => {
+            castListHtml += `
+            <div class='cast-item'>${string}</div>
+            `;
+        });
+
+        let seasonList = '';
+        show.cast.forEach(string => {
+            castListHtml += `
+            <div class='cast-item'>${string}</div>
+            `
+        })
+
+        const finalHtml = `
+            <h1>${show.name}</h1>
+            <div class="detail-wrapper">
+                <img src="${show.coverUrl}" alt=""/>
+                <div class="list-wrapper">
+                    <h2>Seasons</h2>${seasonList}
+                    <h2>Cast</h2>${castListHtml}
+                </div>
+            </div>
+            <h2>Show Details</h2>${show.summary}
+            `
+        };
+
+
+        /*let html = `
         <h1>All TV Shows</h1>
         <div id='show-list'>${htmlString}</div>
         `;
 
-        mainContentWrapperEl.innerHTML = html;
-    };
+        mainContentWrapperEl.innerHTML = html;*/
+    
 
     const renderHomePage = (shows) => {
         let tvShowsHtml = ``;
@@ -42,5 +77,5 @@ const uiModule = (function () {
     const clearDropdown = () => {
         searchDropdownEl.textContent = ('');
     };
-    return { renderPage, renderHomePage, renderSearchDropdown, clearDropdown };
+    return { renderSingleTvShowPage, renderHomePage, renderSearchDropdown, clearDropdown };
 })();
