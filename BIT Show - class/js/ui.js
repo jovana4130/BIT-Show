@@ -25,9 +25,9 @@ const uiModule = (function () {
 
     const renderSingleTvShowPage = (show) => {
         let castListHtml = '';
-        show.cast.forEach(string => {
+        show.cast.forEach((string) => {
             castListHtml += `
-            <div class='cast-item'>${string}</div>
+            <li class='cast-item'>${string}</li>
             `;
         });
 
@@ -39,20 +39,21 @@ const uiModule = (function () {
         });*/
 
         let seasonList = '';
+        //let seasonNumber = 
         show.seasons.forEach(({ startDate, endDate}) => {
             seasonList += `
-            <div class='season-item'>${startDate} - ${endDate}</div>
+            <li class='season-item'>${startDate} - ${endDate}</li>
             `;
         });
 
         const finalHtml = `
             <h1>${show.name}</h1>
             <div class="detail-wrapper">
-                <img src="${show.coverUrl}" alt=""/>
-                <div class="list-wrapper">
-                    <h2>Seasons</h2>${seasonList}
+                <img src="${show.coverUrl}" alt="show poster"/>
+                <ul class="list-wrapper">
+                    <h2>Seasons ()</h2>${seasonList}
                     <h2>Cast</h2>${castListHtml}
-                </div>
+                </ul>
             </div>
             <h2>Show Details</h2>${show.summary}
             `;
@@ -70,7 +71,7 @@ const uiModule = (function () {
     };
 
     const clearDropdown = () => {
-        searchDropdownEl.innerHTML = ('');
+        searchDropdownEl.innerHTML = '';
     };
     return { renderSingleTvShowPage, renderHomePage, renderSearchDropdown, clearDropdown };
 })();

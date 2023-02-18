@@ -1,4 +1,4 @@
-const dataModule = (function(data,ui) {
+const dataModule = (function() {
     
     class Season {
         constructor(startDate, endDate) {
@@ -8,12 +8,13 @@ const dataModule = (function(data,ui) {
     }
 
     class TvShow {
-        constructor(name, id, coverUrl, cast, seasons) {
+        constructor(name, id, coverUrl, cast, seasons, summary) {
             this.id = id;
             this.name = name;
             this.coverUrl = coverUrl;
             this.cast = cast;
             this.seasons = seasons;
+            this.summary = summary;
         }
     }
 
@@ -24,7 +25,8 @@ const dataModule = (function(data,ui) {
             })
             .then(function (showsRawObjects) {
                 showsRawObjects.slice(50);
-                return showsRawObjects.map(({name, id, image}) => new TvShow(name, id, image?.original));
+                return showsRawObjects.map(({ name, id, image }) => new TvShow(name, id, image.original));
+                //image?.original
             });   
     };
 
@@ -34,9 +36,9 @@ const dataModule = (function(data,ui) {
             return res.json();
         })
         .then(function (rawTvShows) {
-            const tvSeasons = rawTvShows._embedded.seasons.map((s) => new Season(s.premiereDate, s.endDate));
+            const seasons = rawTvShows._embedded.seasons.map((s) => new Season(s.startDate, s.endDate));
             const cast = rawTvShows.embeded.cast.map((a) => a.person.name);
-            return new TvShow(rawTvShows.name, raw.TvShow.id, rawTvShow.image.original.rawTvShow.summary. cast, tvSeasons);
+            return new TvShow(rawTvShows.name, rawTvShow.id, rawTvShow.image.original, cast, seasons, rawTvShow.summary);
             //console.log(rawTvShows);
         });
     };
@@ -48,7 +50,7 @@ const dataModule = (function(data,ui) {
         })
         .then(function (showsRawObjects) {
             return showsRawObjects.map(({ show }) => {
-                const {name, id, image} = show;
+                const { name, id, image } = show;
                 const imageToUse = image ? image.original : '';
                 return new TvShow(name, id, imageToUse);
             });
