@@ -2,7 +2,7 @@
     const searchInput = document.querySelector('search-input');
     const searchDropdownEl = document.querySelector('#search-dropdown');
     const homeButtonEl = document.querySelector('#home-button');
-    const mainContentWrapperEl = document.querySelector('home-button');
+    const mainContentWrapper = document.querySelector('main-content');
 
     const onSearch = (e) => {
         //console.log(e.target.value);
@@ -20,7 +20,7 @@
             return;
         }
         ui.clearDropdown();
-        const id = e.target.getAttribute('id');
+        const id = event.target.getAttribute('id');
         data.getSingleTvShow(id).then((show) => {
             ui.renderSingleTvShowPage(show);
         });
@@ -28,11 +28,13 @@
     };
 
     const onSingleTvShowClick = (e) => {
-        console.log(e.target.parentElement.getAttribute('class'));
-        if (e.target.getAttribute('class') !== 'show-item') {
-        return;
+        //console.log(e.target.parentElement.getAttribute('class'));
+        const targetEl = e.target.parentElement;
+        if (targetEl.getAttribute('class') !== 'show-item') {
+            return;
         };
-        const id = e.target.getAttribute('id');
+
+        const id = targetEl.getAttribute('id');
         data.getSingleTvShow(id).then((show) => {
             ui.renderSingleTvShowPage(show);
         });
@@ -49,5 +51,5 @@
     searchInput.addEventListener('keyup', onSearch);
     searchDropdownEl.addEventListener('click', onSearchDropdownClick);
     homeButtonEl.addEventListener('click', onClickHomeButtonHandler);
-    mainContentWrapperEl.addEventListener('click', onSingleTvShowClick);
+    mainContentWrapper.addEventListener('click', onSingleTvShowClick);
 })(dataModule, uiModule);

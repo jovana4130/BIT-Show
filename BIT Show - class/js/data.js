@@ -34,8 +34,10 @@ const dataModule = (function(data,ui) {
             return res.json();
         })
         .then(function (rawTvShows) {
-            const tvSeasons = rawTvShows._embedded.seasons.map(s => new Season(s.premiereDate, s.endDate));
-        console.log(rawTvShows);
+            const tvSeasons = rawTvShows._embedded.seasons.map((s) => new Season(s.premiereDate, s.endDate));
+            const cast = rawTvShows.embeded.cast.map((a) => a.person.name);
+            return new TvShow(rawTvShows.name, raw.TvShow.id, rawTvShow.image.original.rawTvShow.summary. cast, tvSeasons);
+            //console.log(rawTvShows);
         });
     };
 
@@ -48,7 +50,7 @@ const dataModule = (function(data,ui) {
             return showsRawObjects.map(({ show }) => {
                 const {name, id, image} = show;
                 const imageToUse = image ? image.original : '';
-                return new TvShow(name, id, image?.original);
+                return new TvShow(name, id, imageToUse);
             });
         });
     };

@@ -1,15 +1,29 @@
 const uiModule = (function () {
+    
     const mainContentWrapperEl = document.querySelector('#main-content');
     const searchDropdownEl = document.querySelector('#search-dropdown');
     
-    const renderSingleTvShowPage = (show) => {
-    
-        show.cast.forEach(string => {
-            castListHtml += `
-            <div class='csst-item'>${string}</div>
+    const renderHomePage = (shows) => {
+        let html = `
+            <h1>All TV Shows</h1>
+            <div id='show-list'>
+        `;
+
+        shows.forEach((show) => {
+            html += `
+            <div class='show-item' id=${show.id}></div>
+            <img src='${show.coverUrl}' alt='show cover image'/>
+            <p>${show.name}</p>
+            </div>
             `;
+        //renderPage(tvShowsHtml);
         });
 
+        html += `</div>`;
+        mainContentWrapperEl.innerHTML = html;
+    };
+
+    const renderSingleTvShowPage = (show) => {
         let castListHtml = '';
         show.cast.forEach(string => {
             castListHtml += `
@@ -17,12 +31,19 @@ const uiModule = (function () {
             `;
         });
 
+        /*let castListHtml = '';
+        show.cast.forEach(string => {
+            castListHtml += `
+            <div class='cast-item'>${string}</div>
+            `;
+        });*/
+
         let seasonList = '';
-        show.cast.forEach(({ startDate, endDate}) => {
+        show.seasons.forEach(({ startDate, endDate}) => {
             seasonList += `
-            <div class='cast-item'>${startDate} - ${endDate}</div>
-            `
-        })
+            <div class='season-item'>${startDate} - ${endDate}</div>
+            `;
+        });
 
         const finalHtml = `
             <h1>${show.name}</h1>
@@ -34,25 +55,8 @@ const uiModule = (function () {
                 </div>
             </div>
             <h2>Show Details</h2>${show.summary}
-            `
-
-            mainContentWrapperEl.innerHTML = finalHtml;
-    };
-
-    const renderHomePage = (shows) => {
-        let tvShowsHtml = ``;
-
-        shows.forEach((show) => {
-            TvShowHtml += `
-            <div class='show-item' id=${show.id}></div>
-            <img src='${show.coverUrl}' alt='show cover image'/>
-            <p>${show.name}</p>
-            </div>
             `;
-        renderPage(tvShowsHtml);
-        });
-
-        mainContentWrapperEl.innerHTML = html;
+            mainContentWrapperEl.innerHTML = finalHtml;
     };
 
     const renderSearchDropdown = (shows) => {
@@ -66,7 +70,7 @@ const uiModule = (function () {
     };
 
     const clearDropdown = () => {
-        searchDropdownEl.textContent = ('');
+        searchDropdownEl.innerHTML = ('');
     };
     return { renderSingleTvShowPage, renderHomePage, renderSearchDropdown, clearDropdown };
 })();

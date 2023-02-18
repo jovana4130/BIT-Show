@@ -147,7 +147,7 @@ const uiModule = (function () {
         }; */
 
 
-});
+
 
 
 

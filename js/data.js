@@ -70,6 +70,6 @@ var dataModule = (function() {
         .fail(() => {
             const err = 'Network problem, try again later.'
             failCb(err);
-        });
+        })
     }
 };
