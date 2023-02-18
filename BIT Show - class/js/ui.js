@@ -5,13 +5,13 @@ const uiModule = (function () {
     
     const renderHomePage = (shows) => {
         let html = `
-            <h1>All TV Shows</h1>
+            <h1>Popular Shows</h1>
             <div id='show-list'>
         `;
 
         shows.forEach((show) => {
             html += `
-            <div class='show-item' id=${show.id}></div>
+            <div class='show-item' id=${show.id}>
             <img src='${show.coverUrl}' alt='show cover image'/>
             <p>${show.name}</p>
             </div>
