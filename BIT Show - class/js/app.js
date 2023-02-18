@@ -1,8 +1,8 @@
 (function (data, ui) {
-    const searchInput = document.querySelector('search-input');
+    const searchInput = document.querySelector('#search-input');
     const searchDropdownEl = document.querySelector('#search-dropdown');
     const homeButtonEl = document.querySelector('#home-button');
-    const mainContentWrapper = document.querySelector('main-content');
+    const mainContentWrapper = document.querySelector('#main-content');
 
     const onSearch = (e) => {
         //console.log(e.target.value);

@@ -8,7 +8,7 @@ const dataModule = (function(data,ui) {
     }
 
     class TvShow {
-        constructor(name, id, coverUrl) {
+        constructor(name, id, coverUrl, cast, seasons) {
             this.id = id;
             this.name = name;
             this.coverUrl = coverUrl;
@@ -29,7 +29,7 @@ const dataModule = (function(data,ui) {
     };
 
     const getSingleTvShow = (id) => {
-        return fetch(`http://api.tvmaze.com/shows/${id}?embeded[]=seasons&embeded[]cast`)
+        return fetch(`http://api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]cast`)
         .then(function (res) {
             return res.json();
         })
