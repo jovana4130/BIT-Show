@@ -25,8 +25,12 @@ const uiModule = (function () {
             itemEl.setAttribute('id', show.id);
             itemEl.classList.add('search-item');
             itemEl.textContent = show.name;
-            renderSearchDropdownEl.appendChild(itemEl)
+            searchDropdownEl.appendChild(itemEl)
         })
     };
-    return { renderHomePage, renderSearchDropdown };
+
+    const clearDropdown = () => {
+        searchDropdownEl.textContent = ('');
+    };
+    return { renderHomePage, renderSearchDropdown, clearDropdown };
 })();

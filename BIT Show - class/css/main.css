@@ -23,7 +23,7 @@
 
 #search-wrapper {
     position: relative;
-    width: 100%;
+    width: 200px;
 }
 
 #search-wrapper input {
@@ -32,7 +32,20 @@
 }
 
 .search-item {
-    padding: 4px 0;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.search-item:hover {
+    color: blue;
+}
+
+.search-item:first-child {
+    margin-top: 4px;
+}
+
+.search-item:last-child {
+    margin-top: 4px;
 }
 
 #search-dropdown {
@@ -40,7 +53,7 @@
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px -4px 40px rgb(255, 255, 255, 0.06), 0px 4px 24px rgb(16, 37, 62, 0.04), 0px 24px 48px rgb(75,  82,  93, 0.02);
-    width: 100px;
+    width: 200px;
     /*padding: 4px;*/
 }
 
