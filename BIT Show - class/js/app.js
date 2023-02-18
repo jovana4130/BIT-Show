@@ -2,6 +2,7 @@
     const searchInput = document.querySelector('search-input');
     const searchDropdownEl = document.querySelector('#search-dropdown');
     const homeButtonEl = document.querySelector('#home-button');
+    const mainContentWrapperEl = document.querySelector('home-button');
 
     const onSearch = (e) => {
         //console.log(e.target.value);
@@ -14,21 +15,31 @@
     };
 
     const onSearchDropdownClick = (e) => {
-        if (event.target.getAttribute('class') !== 'search-item') {
+        if (e.target.getAttribute('class') !== 'search-item') {
             //ui.clearDropdown();
             return;
         }
         ui.clearDropdown();
-        const id = event.target.getAttribute('id');
-        
+        const id = e.target.getAttribute('id');
         data.getSingleTvShow(id).then((show) => {
             ui.renderSingleTvShowPage(show);
         });
-        //console.log(event.target.getAttribute('id'));
+        //console.log(e.target.getAttribute('id'));
+    };
+
+    const onSingleTvShowClick = (e) => {
+        console.log(e.target.parentElement.getAttribute('class'));
+        if (e.target.getAttribute('class') !== 'show-item') {
+        return;
+        };
+        const id = e.target.getAttribute('id');
+        data.getSingleTvShow(id).then((show) => {
+            ui.renderSingleTvShowPage(show);
+        });
     };
 
     const onClickHomeButtonHandler = () => {
-    data.getShows().then((shows) => {
+        data.getShows().then((shows) => {
         ui.renderHomePage(shows);
         });
     };
@@ -38,5 +49,5 @@
     searchInput.addEventListener('keyup', onSearch);
     searchDropdownEl.addEventListener('click', onSearchDropdownClick);
     homeButtonEl.addEventListener('click', onClickHomeButtonHandler);
-    //searchInput.addEventListener('blur', ui.clearDropdown);
+    mainContentWrapperEl.addEventListener('click', onSingleTvShowClick);
 })(dataModule, uiModule);
