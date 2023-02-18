@@ -18,9 +18,9 @@ const uiModule = (function () {
         });
 
         let seasonList = '';
-        show.cast.forEach(string => {
-            castListHtml += `
-            <div class='cast-item'>${string}</div>
+        show.cast.forEach(({ startDate, endDate}) => {
+            seasonList += `
+            <div class='cast-item'>${startDate} - ${endDate}</div>
             `
         })
 
@@ -35,16 +35,9 @@ const uiModule = (function () {
             </div>
             <h2>Show Details</h2>${show.summary}
             `
-        };
 
-
-        /*let html = `
-        <h1>All TV Shows</h1>
-        <div id='show-list'>${htmlString}</div>
-        `;
-
-        mainContentWrapperEl.innerHTML = html;*/
-    
+            mainContentWrapperEl.innerHTML = finalHtml;
+    };
 
     const renderHomePage = (shows) => {
         let tvShowsHtml = ``;
@@ -71,8 +64,6 @@ const uiModule = (function () {
             searchDropdownEl.appendChild(itemEl);
         });
     };
-
-
 
     const clearDropdown = () => {
         searchDropdownEl.textContent = ('');
