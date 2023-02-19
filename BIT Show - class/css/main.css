@@ -159,11 +159,6 @@
     margin-bottom: 10px;
 }
 
-.scroll-bar {
-
-}
-
-
 #footer {
     height: 70px;
     background-color: rgb(74, 71, 71);
@@ -174,4 +169,5 @@
     align-self: stretch;
     color: white;
     font-size: x-small;
+    position: relative;
 }
