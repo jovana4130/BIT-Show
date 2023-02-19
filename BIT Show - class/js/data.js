@@ -37,7 +37,7 @@ const dataModule = (function() {
         })
         .then(function (rawTvShows) {
             console.log(rawTvShows);
-            console.log('cao');
+            //console.log('cao');
             const seasons = rawTvShows._embedded.seasons.map((s) => new Season(s.startDate, s.endDate));
             const cast = rawTvShows._embedded.cast.map((a) => a.person.name);
             return new TvShow(rawTvShows.name, rawTvShows.id, rawTvShows.image.original, cast, seasons, rawTvShows.summary);
