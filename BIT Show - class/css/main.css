@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     /*flex-wrap: wrap;*/
 }
 
@@ -21,7 +22,6 @@
     padding: 0 24px;
     align-self: stretch;
     color: white;
-    width: 100%;
     position: sticky;
 }
 
@@ -69,19 +69,27 @@
     box-shadow: 0px -4px 40px rgb(255, 255, 255, 0.06), 0px 4px 24px rgb(16, 37, 62, 0.04), 0px 24px 48px rgb(75,  82,  93, 0.02);
     width: 200px;
     color:rgb(74, 71, 71);
+    background-color: white;
+    overflow: visible;
     /*padding: 4px;*/
 }
 
 #main-content {
-    height: calc(100vh - 140px);
-    overflow: auto;
+    /*height: calc(100vh - 140px);
+    /*overflow: auto;*/
     padding: 24px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*max-width: 1200px;*/
+    width: 80%;
     justify-content: space-between;
 }
+
+/*.p {
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+}*/
 
 #main-content h1 {
     margin-top: 24px;
@@ -90,12 +98,13 @@
 
 #show-list {
     display: flex;
+    position: relative;
     flex-wrap: wrap;
-    gap: 10px;
+    /*gap: 10px;*/
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
-    padding-top: 24px 0;
+    width: 1380px;
+    /*padding-top: 24px 0;*/
 }
 
 /*#show-list-item:hover {
@@ -105,14 +114,22 @@
 .show-item {
     width: 350px;
     cursor: pointer;
+    /*align-items: flex-start;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.show-item p {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .show-item img{
-    width: 100%;
-    height: 100%;
+    width: 280px;
+    height: 400px;
     object-fit: cover;
-    flex-direction: inherit;
+    /*flex-direction: inherit;*/
 }
 
 .detail-wrapper img{
@@ -130,6 +147,20 @@
 
 .list-wrapper {
     margin-left: 20px;
+    font-size: 15px;
+}
+
+.season-item, .cast-item {
+    margin-left: 15px;
+}
+
+.h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.scroll-bar {
+
 }
 
 
