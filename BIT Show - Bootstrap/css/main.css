@@ -1,7 +1,47 @@
 * {
-    padding: 0;
     margin: 0%;
     box-sizing: content-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    margin: 0 auto;
+}
+
+header {
+    min-width: 100%;
+    background: rgb(74, 71, 71);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .header-title {
+    color: white;
+}
+
+header .input-movie {
+    margin: 13px;
+}
+
+.movie-catalog-box {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.movie-catalog-box #popular-show {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.footer {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(74, 71, 71);
+    color: white;
+    height: 100px;
+}
