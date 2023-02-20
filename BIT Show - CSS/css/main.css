@@ -71,6 +71,7 @@
     color:rgb(74, 71, 71);
     background-color: white;
     overflow: visible;
+    z-index: 1;
     /*padding: 4px;*/
 }
 
