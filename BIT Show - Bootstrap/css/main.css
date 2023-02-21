@@ -24,19 +24,32 @@ header .input-movie {
     margin: 13px;
 }
 
+.col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.show-item {
+    width: 350px;
+    cursor: pointer;
+    /*align-items: flex-start;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .movie-catalog-box {
     width: 70%;
     margin: 0 auto;
 }
 
 .movie-catalog-box #popular-show {
-    text-align: left;
+    text-align: center;
     padding-top: 40px;
     padding-bottom: 20px;
 }
 
 .show-item {
-    text-align: left;
+    /*text-align: left;*/
 }
 
 .footer {
