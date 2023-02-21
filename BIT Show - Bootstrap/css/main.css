@@ -30,9 +30,13 @@ header .input-movie {
 }
 
 .movie-catalog-box #popular-show {
-    text-align: center;
+    text-align: left;
     padding-top: 40px;
     padding-bottom: 20px;
+}
+
+.show-item {
+    text-align: left;
 }
 
 .footer {
