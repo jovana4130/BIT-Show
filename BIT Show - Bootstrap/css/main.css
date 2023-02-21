@@ -50,12 +50,13 @@ header .input-movie {
 
 
 .footer {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    text-shadow: black;
     background-color: rgb(74, 71, 71);
     color: white;
-    height: 100px;
+    height: 40px;
 }
