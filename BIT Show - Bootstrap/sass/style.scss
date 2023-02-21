@@ -1,0 +1,106 @@
+$text-color: #FFFFFF;
+$dropdown-background: #ECF0F1;
+
+.container-fluid {
+
+    .navbar {
+        height: 50px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        .navbar-brand {
+            color: $text-color;
+        }
+
+        #search-input {
+            border-radius: 10px;
+            height: 30px;
+            padding: 10px;
+        }
+    }
+
+    #title {
+        text-align: center;
+        padding: 20px;
+        font-weight: 700;
+    }
+
+    #main-content {
+        margin: 20px;
+        width: 90%;
+    }
+
+    .search-wrapper {
+        position: relative;
+    }
+
+    #search-dropdown {
+        background-color: $dropdown-background;
+        position: absolute;
+        width: 200px;
+        list-style: none;
+        border-radius: 10px; 
+        z-index: 1;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        max-height: 300px;
+        overflow: auto;
+    }
+
+    .search-item {
+        padding: 0 10px;
+    }
+
+    .search-item:first-child {
+        padding-top: 10px; 
+    }
+
+    .search-item:last-child {
+        padding-bottom: 10px; 
+    }
+
+    .card, #home-button {
+        cursor: pointer;
+    }
+
+    .search-item:hover {
+        color: blue;
+    }
+
+    #show-list {
+        align-self: center;
+        margin-top: 10px;
+    }
+
+    #show-item {
+        width: 30%;
+    }
+
+    .show-cover {
+        width: 500px;
+        height: 700px;
+    }
+
+    .card-text {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 20px;
+        background-color: #ECF0F1;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .image-wrapper, .list-wrapper {
+        margin: 20px;
+        text-align: left;
+    }
+
+    .title {
+        text-align: left;
+    }
+
+    footer {
+        margin-top: 30px;
+    }
+
+}
