@@ -11,29 +11,30 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar justify-content-center" style="background-color: rgb(74, 71, 71);">
-
+            <div class="container position-relative">
+                <a class="navbar-brand" style="color: #FFFFFF" id="home-button">BIT Show</a>
+                <div class="search-wrapper">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                    </form>
+                    <div id="search-dropdown"></div>
+                </div>
+            </div> 
         </nav>
-    </div>
-
-
-    <!--<div id="wrapper">
-        <div id="header">
-            <div id="home-button">BitShow</div>
-            <div id="search-wrapper">
-            <input type="text" id="search-input" placeholder="Find a show"/>
-            <div id="search-dropdown"></div>
+        <div class="main text-center" id="main-content"></div>     
+        <footer>
+            <div class="text-center p-3 footer" style="background-color: #343a40;">
+                <small class="text-white">Copyright &copy; Jovana Vucetic 2023.</small>
             </div>
-        </div>
-
-        <div id="main-content"></div>
-        <div id="footer">Copyright &copy; Jovana Vucetic 2023.</div>
-    </div>-->
+        </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="./js/data.js"></script>
     <script src="./js/ui.js"></script>
     <script src="./js/app.js"></script>
+
 </body>
 </html>
 
