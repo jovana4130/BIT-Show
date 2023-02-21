@@ -24,7 +24,10 @@ const dataModule = (function() {
                 return res.json();
             })
             .then(function (showsRawObjects) {
-                showsRawObjects.slice(50);
+                /*const topShows = showsRawObjects
+                .filter(show => show.rating.average)
+                .sort((a, b) => b.rating.average - a.rating.average)*/
+                showsRawObjects.slice(0, 50);
                 return showsRawObjects.map(({ name, id, image }) => new TvShow(name, id, image.original));
                 //image?.original
             });   
