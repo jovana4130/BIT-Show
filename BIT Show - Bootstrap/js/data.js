@@ -19,7 +19,7 @@ const dataModule = (function() {
     }
 
     const getShows = () => {
-        return fetch('http://api.tvmaze.com/shows')
+        return fetch(`http://api.tvmaze.com/shows`)
             .then(function (res) {
                 return res.json();
             })
@@ -27,8 +27,8 @@ const dataModule = (function() {
                 const topShows = showsRawObjects
                 .filter(show => show.rating.average)
                 .sort((a, b) => b.rating.average - a.rating.average)
-                showsRawObjects.slice(0, 50);
-                return showsRawObjects.map(({ name, id, image }) => new TvShow(name, id, image.original));
+                .slice(0, 50)
+                return topShows.map(({ name, id, image }) => new TvShow(name, id, image.original));
                 //image?.original
             });   
     };
