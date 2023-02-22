@@ -15,7 +15,7 @@
 
 #header {
     height: 70px;
-    background-color: rgb(74, 71, 71);
+    background-color: rgb(1, 1, 1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,7 +38,7 @@
 
 #search-wrapper input {
     position: relative;
-    width: 100%;
+    width: 200px;
     height: 36px;
     border-radius: 4px;
     padding: 0 8px;
@@ -47,6 +47,7 @@
 .search-item {
     padding: 4px 8px;
     cursor: pointer;
+    
 }
 
 .search-item:hover {
@@ -55,10 +56,12 @@
 
 .search-item:first-child {
     margin-top: 4px;
+    
 }
 
 .search-item:last-child {
     margin-top: 4px;
+    
 }
 
 #search-dropdown {
@@ -68,22 +71,30 @@
     border-radius: 8px;
     box-shadow: 0px -4px 40px rgb(255, 255, 255, 0.06), 0px 4px 24px rgb(16, 37, 62, 0.04), 0px 24px 48px rgb(75,  82,  93, 0.02);
     width: 200px;
-    color:rgb(74, 71, 71);
+    color:rgb(1, 1, 1);
     background-color: white;
     overflow: visible;
     z-index: 1;
     /*padding: 4px;*/
+    opacity: 2;
+    
+}
+
+body {
+    background-image: url('./hd-wallpaper-1854124.jpg');
+    background-repeat: repeat;
 }
 
 #main-content {
-    /*height: calc(100vh - 140px);
-    /*overflow: auto;*/
+    /*height: calc(100vh - 140px);*/
+    overflow: visible;
     padding: 24px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
     justify-content: space-between;
+    
 }
 
 .p {
@@ -116,15 +127,20 @@
 .show-item {
     width: 350px;
     cursor: pointer;
-    /*align-items: flex-start;*/
+    /*align-items: center;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /*border: 1px;
+    border-style: solid;*/
+    /*overflow: hidden;*/
+    
 }
 
 .show-item p {
     margin-top: 10px;
     margin-bottom: 10px;
+    
 }
 
 .show-item img{
@@ -136,6 +152,7 @@
 
 .detail-wrapper img{
     width: 350px;
+    
 }
 
 .detail-wrapper {
@@ -145,6 +162,7 @@
     columns: 2;
     column-gap: 20px;
     list-style-type: symbols(bulletin);
+    
 }
 
 .list-wrapper {
@@ -163,7 +181,7 @@
 
 #footer {
     height: 70px;
-    background-color: rgb(74, 71, 71);
+    background-color: rgb(1, 1, 1);
     display: flex;
     align-items: center;
     justify-content: center;
