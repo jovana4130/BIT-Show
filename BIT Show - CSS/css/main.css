@@ -86,11 +86,12 @@
     justify-content: space-between;
 }
 
-/*.p {
+.p {
     justify-content: center;
     text-align: justify;
     align-items: center;
-}*/
+    
+}
 
 #main-content h1 {
     margin-top: 24px;
