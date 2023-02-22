@@ -81,13 +81,13 @@
 }
 
 body {
-    background-image: url('./hd-wallpaper-1854124.jpg');
+    background-image: url('./black_minimal_halftone_in_white_background.jpg');
     background-repeat: repeat;
 }
 
 #main-content {
     /*height: calc(100vh - 140px);*/
-    overflow: visible;
+    /*overflow: visible;*/
     padding: 24px 0;
     display: flex;
     flex-direction: column;
