@@ -81,8 +81,9 @@
 }
 
 body {
-    background-image: url('./jon-tyson-Vl9u94L3NTQ-unsplash.jpg');
-    background-repeat: repeat;
+    background: url('./mockup-graphics-MBIge9kUMs4-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+
 }
 
 #main-content {
