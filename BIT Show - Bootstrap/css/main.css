@@ -1,4 +1,4 @@
-* {
+/** {
     margin: 0%;
     box-sizing: content-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -10,7 +10,7 @@ body {
 
 /*.h1 {
     text-size-adjust: 20px;
-}*/
+}
 
 header {
     min-width: 100%;
@@ -23,7 +23,68 @@ header {
 
 header .header-title {
     color: white;
-}
+}*/
+
+.container-fluid .navbar {
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px; }
+    .container-fluid .navbar .navbar-brand {
+      color: #FFFFFF; }
+    .container-fluid .navbar #search-input {
+      border-radius: 10px;
+      height: 30px;
+      padding: 10px; }
+  .container-fluid #title {
+    text-align: center;
+    padding: 20px;
+    font-weight: 700; }
+  .container-fluid #main-content {
+    margin: 20px;
+    width: 90%; }
+  .container-fluid .search-wrapper {
+    position: relative; }
+  .container-fluid #search-dropdown {
+    background-color: #ECF0F1;
+    position: absolute;
+    width: 200px;
+    list-style: none;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    max-height: 300px;
+    overflow: auto; }
+  .container-fluid .search-item {
+    padding: 0 10px; }
+  .container-fluid .search-item:first-child {
+    padding-top: 10px; }
+  .container-fluid .search-item:last-child {
+    padding-bottom: 10px; }
+  .container-fluid .card, .container-fluid #home-button {
+    cursor: pointer; }
+  .container-fluid .search-item:hover {
+    color: blue; }
+  .container-fluid #show-list {
+    align-self: center;
+    margin-top: 10px; }
+  .container-fluid #show-item {
+    width: 30%; }
+  .container-fluid .show-cover {
+    width: 500px;
+    height: 700px; }
+  .container-fluid .card-text {
+    padding: 10px; }
+  .container-fluid .card {
+    padding: 20px;
+    background-color: #ECF0F1;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; }
+  .container-fluid .image-wrapper, .container-fluid .list-wrapper {
+    margin: 20px;
+    text-align: left; }
+  .container-fluid .title {
+    text-align: left; }
+  .container-fluid footer {
+    margin-top: 30px; }
 
 header .input-movie {
     margin: 13px;
