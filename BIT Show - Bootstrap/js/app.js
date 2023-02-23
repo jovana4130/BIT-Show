@@ -1,8 +1,8 @@
 (function (data, ui) {
-    const searchInput = document.querySelector('#search-input');
-    const searchDropdownEl = document.querySelector('#search-dropdown');
-    const homeButtonEl = document.querySelector('#home-button');
-    const mainContentWrapper = document.querySelector('#main-content');
+    const searchInput = $('#search-input');
+    const searchDropdownEl = $('#search-dropdown');
+    const homeButtonEl = $('#home-button');
+    const mainContentWrapper = $('#main-content');
 
     const onSearch = (e) => {
         //console.log(e.target.value);
@@ -48,8 +48,8 @@
 
     onClickHomeButtonHandler();
 
-    searchInput.addEventListener('keyup', onSearch);
-    searchDropdownEl.addEventListener('click', onSearchDropdownClick);
-    homeButtonEl.addEventListener('click', onClickHomeButtonHandler);
-    mainContentWrapper.addEventListener('click', onSingleTvShowClick);
+    searchInput.keyup(onSearch);
+    searchDropdownEl.click(onSearchDropdownClick);
+    homeButtonEl.click(onClickHomeButtonHandler);
+    mainContentWrapper.click(onSingleTvShowClick);
 })(dataModule, uiModule);

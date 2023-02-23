@@ -12,8 +12,8 @@ const uiModule = (function () {
         shows.forEach((show) => {
             html += `
             <div class='show-item' id=${show.id}>
-            <img src='${show.coverUrl}' alt='show cover image'/>
-            <p>${show.name}</p>
+                <img src='${show.coverUrl}' alt='show cover image'/>
+                <p>${show.name}</p>
             </div>
             `;
         //renderPage(tvShowsHtml);

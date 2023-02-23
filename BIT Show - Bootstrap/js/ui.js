@@ -2,6 +2,7 @@ const uiModule = (function () {
     
     const mainContentWrapperEl = document.querySelector('#main-content');
     const searchDropdownEl = document.querySelector('#search-dropdown');
+    const searchInputEl = document.querySelector('#search-input');
     
     const renderHomePage = (shows) => {
         let html = `
@@ -12,15 +13,17 @@ const uiModule = (function () {
         shows.forEach((show) => {
             html += `
             <div class='show-item' id=${show.id}>
-            <img src='${show.coverUrl}' alt='show cover image'/>
-            <p>${show.name}</p>
+                <div class='show-board'>
+                    <img src='${show.coverUrl}' alt='show board poster'/>
+                    <p class='show-name'>${show.name}</p>
+                </div>
             </div>
             `;
         //renderPage(tvShowsHtml);
         });
 
         html += `</div>`;
-        mainContentWrapperEl.innerHTML = html;
+        mainContentWrapperEl.html(html);
     };
 
     const renderSingleTvShowPage = (show) => {
@@ -39,39 +42,53 @@ const uiModule = (function () {
         });*/
 
         let seasonList = '';
-        //let seasonNumber = 
+        let seasonNumber = 0;
         show.seasons.forEach(({ startDate, endDate}) => {
+            seasonNumber++;
             seasonList += `
             <li class='season-item'>${startDate} - ${endDate}</li>
             `;
         });
 
         const finalHtml = `
-            <h1>${show.name}</h1>
+        <div class='container'>
+            <div class='row text-center'>
+                <h1>${show.name}</h1>
+            </div>
             <div class="detail-wrapper">
-                <img src="${show.coverUrl}" alt="show poster"/>
-                <ul class="list-wrapper">
-                    <h2>Seasons ()</h2>${seasonList}
-                    <h2>Cast</h2>${castListHtml}
+                <img src="${show.coverUrl}" class=\img-responsive show poster' alt="show poster"/>
+            </div>
+            <div class='list-wrapper'>
+                <h2>Seasons (${seasonNumber})</h2>
+                <ul>
+                ${seasonList}
+                </ul>
+                <h2>Cast</h2>
+                <ul>
+                ${castListHtml}
                 </ul>
             </div>
+        </div>
+        <div class='container2'>
             <h2>Show Details</h2>${show.summary}
+        </div>
             `;
-            mainContentWrapperEl.innerHTML = finalHtml;
+        mainContentWrapperEl.html(finalHtml);
     };
 
     const renderSearchDropdown = (shows) => {
         shows.forEach((show) => {
-            const itemEl = document.createElement('div');
-            itemEl.setAttribute('id', show.id);
-            itemEl.classList.add('search-item');
-            itemEl.textContent = show.name;
-            searchDropdownEl.appendChild(itemEl);
+            const itemEl = $(`
+            <div id="${show.id}" class="search-item">${show.name}</div>
+            `
+            );
+            itemEl.setAttribute("style", "cursor: pointer;");
+            searchDropdownEl.append(itemEl);
         });
     };
 
     const clearDropdown = () => {
-        searchDropdownEl.innerHTML = '';
+        searchDropdownEl.html = ('');
     };
     return { renderSingleTvShowPage, renderHomePage, renderSearchDropdown, clearDropdown };
 })();
