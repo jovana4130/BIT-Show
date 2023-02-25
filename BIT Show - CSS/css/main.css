@@ -135,13 +135,11 @@ body {
     border-style: solid;*/
     /*overflow: hidden;*/
     font-weight: bold;
-    
 }
 
 .show-item p {
     margin-top: 10px;
     margin-bottom: 10px;
-    
 }
 
 .show-item img{
@@ -150,10 +148,14 @@ body {
     object-fit: cover;
     /*flex-direction: inherit;*/
     /*margin-bottom: 20px;*/
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px 1px rgb(53, 53, 53);
 }
 
 .detail-wrapper img{
     width: 550px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px 1px rgb(53, 53, 53);
 }
 
 .detail-wrapper {
