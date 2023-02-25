@@ -74,7 +74,7 @@
     color:rgb(1, 1, 1);
     background-color: white;
     overflow: visible;
-    text-decoration: underline; /*subota 17:59h*/
+    text-decoration: underline; /*subota 17:59h - staviti svuda font pod iste clase sa nabrajanjem*/
 }
 
 body {
