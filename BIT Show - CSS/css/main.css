@@ -134,6 +134,7 @@ body {
     /*border: 1px;
     border-style: solid;*/
     /*overflow: hidden;*/
+    font-weight: bold;
     
 }
 
@@ -169,6 +170,7 @@ body {
 
 .season-item, .cast-item {
     margin-left: 15px;
+    width: fit-content;
 }
 
 .h2 {
