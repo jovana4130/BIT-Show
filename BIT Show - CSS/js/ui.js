@@ -52,7 +52,7 @@ const uiModule = (function () {
                 <img src="${show.coverUrl}" alt="show poster"/>
                 <ul class="list-wrapper">
                     <div class='show-seasons'>
-                    <p id='seasons-header'>Seasons ()</p>${seasonList}
+                    <p id='seasons-header'>Seasons (${show.seasons.length})</p>${seasonList}
                     </div>
                     <div class='show-cast'>
                     <p id='cast-header'>Cast</p>${castListHtml}

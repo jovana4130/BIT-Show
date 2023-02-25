@@ -23,6 +23,8 @@
     align-self: stretch;
     color: white;
     position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 #home-button {
@@ -72,9 +74,6 @@
     color:rgb(1, 1, 1);
     background-color: white;
     overflow: visible;
-    z-index: 100;
-    /*padding: 4px;*/
-    /*opacity: 2;*/
 }
 
 body {
@@ -150,8 +149,7 @@ body {
     /*flex-direction: inherit;*/
     /*margin-bottom: 20px;*/
     border-radius: 7px;
-    z-index: 0;
-    /*box-shadow: 1px 1px 3px 1px rgb(53, 53, 53);*/
+    box-shadow: 1px 1px 3px 1px rgb(53, 53, 53);
 }
 
 .detail-wrapper img{
