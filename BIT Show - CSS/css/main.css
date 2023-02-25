@@ -151,18 +151,15 @@ body {
 }
 
 .detail-wrapper img{
-    width: 350px;
-    
+    width: 550px;
 }
 
 .detail-wrapper {
-    margin-left: 0;
-    align-items: center;
-    justify-content: center;
-    columns: 2;
-    column-gap: 20px;
-    list-style-type: symbols(bulletin);
-    
+    width: 60%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    text-align: left;
 }
 
 .list-wrapper {
