@@ -51,11 +51,17 @@ const uiModule = (function () {
             <div class="detail-wrapper">
                 <img src="${show.coverUrl}" alt="show poster"/>
                 <ul class="list-wrapper">
-                    <h2>Seasons ()</h2>${seasonList}
-                    <h2>Cast</h2>${castListHtml}
+                    <div class='show-seasons'>
+                    <p id='seasons-header'>Seasons ()</p>${seasonList}
+                    </div>
+                    <div class='show-cast'>
+                    <p id='cast-header'>Cast</p>${castListHtml}
+                    <div>
                 </ul>
             </div>
-            <h2>Show Details</h2>${show.summary}
+            <div class='show-summary'>
+            <p id='summary-header'>Show Details</p>${show.summary}
+            </div>
             `;
             mainContentWrapperEl.innerHTML = finalHtml;
     };

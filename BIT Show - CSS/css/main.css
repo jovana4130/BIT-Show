@@ -171,6 +171,26 @@ body {
 .season-item, .cast-item {
     margin-left: 15px;
     width: fit-content;
+    
+}
+
+#seasons-header, #cast-header {
+    font-size: large;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.show-summary {
+    /*justify-content: center;*/
+    text-align: justify;
+}
+
+#summary-header {
+    font-size: large;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .h2 {
