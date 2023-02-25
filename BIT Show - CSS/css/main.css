@@ -137,7 +137,10 @@ body {
 
 .show-item:hover {
     color: rgb(7, 7, 191); 
+    transform: scale(1.05);
 }
+
+
 
 /*
 .show-item.zoom {
