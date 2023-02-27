@@ -232,3 +232,7 @@ h1 {
     font-size: x-small;
     position: relative;
 }
+
+@media screen and (max-width: 1200px) {
+    
+}
