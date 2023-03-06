@@ -215,9 +215,12 @@ body {
     
 }
 
-h1 {
+.h1 {
     text-decoration: rgb(39, 38, 38);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Helvetica Neue';
+    font-size: 30px;
+    padding-block: 2px;
+    text-align: center;
 }
 
 #footer {

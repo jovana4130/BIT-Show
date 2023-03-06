@@ -5,8 +5,10 @@ const uiModule = (function () {
     
     const renderHomePage = (shows) => {
         let html = `
+            <div>
             <h1>Popular Shows</h1>
             <div id='show-list'>
+            
         `;
 
         shows.forEach((show) => {
